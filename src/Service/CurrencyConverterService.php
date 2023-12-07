@@ -14,10 +14,23 @@ class CurrencyConverterService
     private const API_BASE_URL = 'https://open.er-api.com/v6/latest/EUR';
 
     public function getCurrencies(): array
-    {
-        // Puedes ajustar esta lógica según tus necesidades, por ahora simplemente devolveremos una lista fija
-        return ['USD' => 'USD', 'EUR' => 'EUR', 'GBP' => 'GBP', 'JPY' => 'JPY', 'AUD' => 'AUD'];
+{
+    // Llama a la API para obtener las tasas de cambio
+    $conversionJson = file_get_contents(self::API_BASE_URL);
+
+    // Verifica si la API devuelve datos válidos
+    $conversionData = json_decode($conversionJson, true);
+    
+    // Verifica si hay tasas de cambio en la respuesta
+    if (!isset($conversionData['rates'])) {
+        return [];
     }
+
+    // Devuelve todas las monedas presentes en las tasas de cambio
+    return array_keys($conversionData['rates']);
+}
+
+
 
     public function convertCurrency($amount, $currencyFrom, $currencyTo): ?string
     {

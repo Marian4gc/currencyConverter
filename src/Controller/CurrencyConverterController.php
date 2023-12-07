@@ -68,4 +68,13 @@ class CurrencyConverterController extends AbstractController
             return new JsonResponse(['error' => $e->getMessage()], $e->getCode());
         }
     }
+
+    #[Route('/api/currencies', name: 'api_currencies')]
+    public function getCurrenciesApi(): JsonResponse
+    {
+        $currencies = $this->currencyConverterService->getCurrencies();
+
+        return new JsonResponse(['currencies' => $currencies]);
+    }
 }
+
