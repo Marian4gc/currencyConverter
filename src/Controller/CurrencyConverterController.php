@@ -49,7 +49,7 @@ class CurrencyConverterController extends AbstractController
             $data = json_decode($request->getContent(), true);
 
             if (!$data || empty($data['amount']) || empty($data['currencyFrom']) || empty($data['currencyTo'])) {
-                throw new \Exception('Invalid request. Make sure to provide amount, currencyFrom, and currencyTo.', 400);
+                throw new \Exception('Please enter an amount.', 400);
             }
 
             $result = $this->currencyConverterService->convertCurrency($data['amount'], $data['currencyFrom'], $data['currencyTo']);
