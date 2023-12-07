@@ -11,7 +11,7 @@ class CurrencyConverterService
         $this->apiUrl = $apiUrl;
     }
     
-    private const API_BASE_URL = 'https://open.er-api.com/v6/latest/';
+    private const API_BASE_URL = 'https://open.er-api.com/v6/latest/EUR';
 
     public function getCurrencies(): array
     {

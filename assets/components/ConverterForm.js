@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import '../styles/app.css'
 
 const ConverterForm = () => {
-    // Estado para almacenar los valores del formulario
+
     const [amount, setAmount] = useState('');
     const [currencyFrom, setCurrencyFrom] = useState('EUR');
     const [currencyTo, setCurrencyTo] = useState('EUR');
     const [result, setResult] = useState(null);
     const [error, setError] = useState(null);
 
-    // Lista de monedas (puedes obtenerla desde Symfony o configurarla manualmente)
+    // Lista de monedas
     const currencies = ['EUR', 'USD', 'GBP', 'JPY', 'AUD'];
 
 
 
-    // Función para manejar el envío del formulario
     const handleSubmit = async (event) => {
         event.preventDefault();
     
@@ -45,7 +45,8 @@ const ConverterForm = () => {
     };
 
     return (
-        <div>
+        <div className="">
+            {/* <h1>Hello! ✅</h1> */}
             <form onSubmit={handleSubmit}>
                 <label>
                     Amount:
@@ -84,12 +85,13 @@ const ConverterForm = () => {
                     </select>
                 </label>
                 <br />
-                <button type="submit">Convert</button>
+                <button 
+                type="submit">Convert</button>
             </form>
 
             {/* resultado y mensaje de error */}
             {error && <p style={{ color: 'red' }}>{error}</p>}
-            {result !== null && <p>Result: {result}</p>}
+            {result !== null && <p>Resultado: {result}</p>}
         </div>
     );
 };

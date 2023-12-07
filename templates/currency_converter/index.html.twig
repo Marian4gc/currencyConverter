@@ -4,10 +4,10 @@
 
 </head>
 <body>
-    <style>
+    {# <style>
         .wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
         .wrapper code { background: #F5F5F5; padding: 2px 6px; }
-    </style>
+    </style> #}
 
     <div class="wrapper">
         <h1>Hello! ✅</h1>
@@ -16,13 +16,15 @@
             <h2>Result: {{ result }}</h2>
         {% endif %}
 
-        <!-- Agrega tus scripts de JavaScript aquí -->
         {{ encore_entry_script_tags('app') }}
+
         <script>
             // Renderiza el componente React en el div específico
             const container = document.getElementById('root');
             ReactDOM.render(<ConverterForm />, container);
         </script>
+
+        {{ encore_entry_link_tags('app') }}
     </div>
 </body>
 </html>
