@@ -7,13 +7,23 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import React from 'react';
-// import ReactDOM from 'react-dom/client';
 import ReactDOM from 'react-dom';
 import ConverterForm from './components/ConverterForm';
 import './styles/app.css';
 
-// Renderiza el componente ConverterForm en el elemento con id "root"
-ReactDOM.render(<ConverterForm />, document.getElementById('root'));
+const App = () => {
+    return (
+        <div>
+            <ConverterForm />
+        </div>
+    );
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));
+
+
+
+// ReactDOM.render(<ConverterForm />, document.getElementById('root'));
 
 // document.addEventListener('DOMContentLoaded', function () {
 //     // Obtén el contenedor del documento
