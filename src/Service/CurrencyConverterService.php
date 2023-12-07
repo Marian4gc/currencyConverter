@@ -50,7 +50,7 @@ class CurrencyConverterService
         $conversionRateTo = $conversionData['rates'][$currencyTo];
 
         // Realiza la conversión
-        $convertedAmount = number_format(($amount / $conversionRateFrom) * $conversionRateTo, 3);
+        $convertedAmount = number_format(($amount / $conversionRateFrom) * $conversionRateTo, 2);
 
         return $convertedAmount;
     }

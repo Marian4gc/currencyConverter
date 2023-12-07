@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\Validator\Constraints as Assert;
 
 class CurrencyConverterController extends AbstractController
 {
@@ -50,6 +51,10 @@ class CurrencyConverterController extends AbstractController
 
             if (!$data || empty($data['amount']) || empty($data['currencyFrom']) || empty($data['currencyTo'])) {
                 throw new \Exception('Please enter an amount.', 400);
+            }
+
+            if (!is_numeric($data['amount'])) {
+                throw new \Exception('Please enter a valid numeric amount without letters or symbols.', 400);
             }
 
             $result = $this->currencyConverterService->convertCurrency($data['amount'], $data['currencyFrom'], $data['currencyTo']);
