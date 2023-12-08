@@ -1,6 +1,6 @@
 # Currency Converter App
 
-!![currency_converter](https://github.com/Marian4gc/currencyConverter/assets/117035764/bb358d40-9c75-442c-ae48-10ba4de7575a)
+![currency_converter](https://github.com/Marian4gc/currencyConverter/assets/117035764/bb358d40-9c75-442c-ae48-10ba4de7575a)
 
 Esta aplicación web permite convertir montos de una moneda a otra utilizando tasas de cambio en tiempo real.
 
