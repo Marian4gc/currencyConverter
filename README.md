@@ -20,7 +20,7 @@ Este proyecto es un sencillo convertidor de moneda construido con Symfony (backe
 
 ## Instalación
 
-1. Clona el repositorio: `git clone https://tu-repositorio.git`
+1. Clona el repositorio: `[git clone https://github.com/Marian4gc/currencyConverter.git`
 2. Instala las dependencias del backend: `composer install`
 3. Instala las dependencias del frontend: `yarn` (o `npm install`)
 
