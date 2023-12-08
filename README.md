@@ -1,5 +1,7 @@
 # Currency Converter App
 
+![Currency Converter App](images/currency_converter.png)
+
 Esta aplicación web permite convertir montos de una moneda a otra utilizando tasas de cambio en tiempo real.
 
 ## Funcionalidades
