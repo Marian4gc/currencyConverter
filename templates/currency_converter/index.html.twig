@@ -4,10 +4,6 @@
 
 </head>
 <body>
-    {# <style>
-        .wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-        .wrapper code { background: #F5F5F5; padding: 2px 6px; }
-    </style> #}
 
     <div>
         <div id="root"></div>
@@ -15,14 +11,16 @@
             <h2>Result: {{ result }}</h2>
         {% endif %}
 
+        {#js#}
         {{ encore_entry_script_tags('app') }}
 
         <script>
-            // Renderiza el componente React en el div específico
+            // Renderizar el componente React
             const container = document.getElementById('root');
             ReactDOM.render(<ConverterForm />, container);
         </script>
 
+            {#css#}
         {{ encore_entry_link_tags('app') }}
     </div>
 </body>

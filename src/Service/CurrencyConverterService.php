@@ -15,54 +15,52 @@ class CurrencyConverterService
 
     public function getCurrencies(): array
 {
-    // Llama a la API para obtener las tasas de cambio
+    //Llamada a la API
     $conversionJson = file_get_contents(self::API_BASE_URL);
 
-    // Verifica si la API devuelve datos válidos
+    //si la API devuelve datos válidos
     $conversionData = json_decode($conversionJson, true);
     
-    // Verifica si hay tasas de cambio en la respuesta
+    //hay tasas de cambio en la respuesta
     if (!isset($conversionData['rates'])) {
         return [];
     }
-
-    // Devuelve todas las monedas presentes en las tasas de cambio
+    //devolver todas las monedas
     return array_keys($conversionData['rates']);
 }
 
 
-
     public function convertCurrency($amount, $currencyFrom, $currencyTo): ?string
     {
-        // Construye la URL de la API para obtener las tasas de cambio específicas
+        //URL de la API
         $url = self::API_BASE_URL . $currencyFrom;
 
-        // Llama a la API para obtener las tasas de cambio
+        //obtener las tasas de cambio
         $conversionJson = file_get_contents($url);
 
-        // Verifica si la API devuelve datos válidos
+        //si datos válidos
         $conversionData = json_decode($conversionJson, true);
         if (!isset($conversionData['rates'])) {
             return null;
         }
 
-        // Verifica si la moneda de origen está presente en las tasas de cambio
+        //ver si está la moneda
         if (!isset($conversionData['rates'][$currencyFrom])) {
             return null;
         }
 
-        // Obtén la tasa de cambio específica
+        //la tasa de cambio
         $conversionRateFrom = $conversionData['rates'][$currencyFrom];
 
-        // Verifica si la moneda de destino está presente en las tasas de cambio
-        if (!isset($conversionData['rates'][$currencyTo])) {
+        // Ver si la moneda
+        if (!isset($conversionData['rates'][$currencyTo])) { 
             return null;
         }
 
-        // Obtén la tasa de cambio específica
+        //la tasa de cambio
         $conversionRateTo = $conversionData['rates'][$currencyTo];
 
-        // Realiza la conversión
+        // Realiza la conversión con dos decimales
         $convertedAmount = number_format(($amount / $conversionRateFrom) * $conversionRateTo, 2);
 
         return $convertedAmount;
