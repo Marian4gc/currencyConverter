@@ -2,56 +2,38 @@
 
 ![currency_converter](https://github.com/Marian4gc/currencyConverter/assets/117035764/bb358d40-9c75-442c-ae48-10ba4de7575a)
 
-Esta aplicación web permite convertir montos de una moneda a otra utilizando tasas de cambio en tiempo real.
+Este proyecto es un sencillo convertidor de moneda construido con Symfony (backend) y React (frontend), utilizando tasas de cambio en tiempo real.
 
-## Funcionalidades
+## Características
 
-- **Conversión de Moneda:** Convierte montos de una moneda a otra seleccionando las monedas de origen y destino.
+- Conversión de moneda en tiempo real.
+- Utiliza la API de Open Exchange Rates para obtener las tasas de cambio.
+- Mensajes de error si no se pone cantidad o si se ponen símbolos o letras.
 
-## Cómo Usar
+## Requisitos
 
-1. **Ingresa el Monto:** Escribe la cantidad que deseas convertir en el campo correspondiente.
+- PHP
+- Composer
+- Symfony CLI
+- Node.js
+- Yarn o npm
 
-2. **Selecciona las Monedas:** Escoge las monedas de origen y destino de las listas desplegables.
+## Instalación
 
-3. **Haz clic en Convertir:** Presiona el botón "Convertir" para obtener el resultado de la conversión.
+1. Clona el repositorio: `git clone https://tu-repositorio.git`
+2. Instala las dependencias del backend: `composer install`
+3. Instala las dependencias del frontend: `yarn` (o `npm install`)
 
-## Tecnologías Utilizadas
+## Configuración
 
-- **Frontend:** React.js
-- **Backend:** Symfony
-- **Servicio de Conversión:** Open Exchange Rates API
+1. Copia el archivo `.env` a `.env.local` y ajusta la configuración según sea necesario.
 
-## Configuración del Proyecto
+## Uso
 
-1. Clona el repositorio:
+1. Inicia el servidor Symfony: `symfony server:start`
+2. Inicia el servidor React: `npx encore dev --watch`
 
-    ```bash
-    git clone https://github.com/tu-usuario/currency-converter.git
-    ```
-
-2. Instala las dependencias:
-
-    ```bash
-    cd currency-converter
-    composer install
-    cd client
-    npm install
-    ```
-
-3. Configura las variables de entorno:
-
-    Crea un archivo `.env` en la raíz del proyecto y configura las variables necesarias.
-
-4. Inicia la aplicación:
-
-    ```bash
-    symfony serve -d
-    cd client
-    npm start
-    ```
-
-Visita [http://localhost:3000](http://localhost:3000) para ver la aplicación en acción.
+Visita `http://localhost:8000` en tu navegador para acceder al convertidor de moneda.
 
 ## Contribuciones
 
