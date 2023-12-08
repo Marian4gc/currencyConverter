@@ -24,16 +24,12 @@ Este proyecto es un sencillo convertidor de moneda construido con Symfony (backe
 2. Instala las dependencias del backend: `composer install`
 3. Instala las dependencias del frontend: `yarn` (o `npm install`)
 
-## Configuración
-
-1. Copia el archivo `.env` a `.env.local` y ajusta la configuración según sea necesario.
-
 ## Uso
 
 1. Inicia el servidor Symfony: `symfony server:start`
 2. Inicia el servidor React: `npx encore dev --watch`
 
-Visita `http://localhost:8000` en tu navegador para acceder al convertidor de moneda.
+Visita `http://localhost:8000/currency/converter` en tu navegador para acceder al convertidor de moneda.
 
 ## Contribuciones
 
