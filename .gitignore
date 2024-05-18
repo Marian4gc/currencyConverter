@@ -15,5 +15,3 @@
 npm-debug.log
 yarn-error.log
 ###< symfony/webpack-encore-bundle ###
-# Ignorar README.md
-README.md
